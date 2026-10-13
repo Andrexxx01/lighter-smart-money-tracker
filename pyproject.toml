@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lighter-smart-money-tracker"
+version = "0.1.0"
+
+description = "Read-only Lighter smart money data collection and analytics"
+
+requires-python = ">=3.12,<3.13"
+
+dependencies = [
+    "lighter-sdk @ git+https://github.com/elliottech/lighter-python.git",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8,<10",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
